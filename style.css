@@ -97,34 +97,35 @@ nav a:hover {
 .hamburger.open div:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
 
 /* ===========================
-   HERO ADAPTIV + ANIMAȚIE
+   HERO ADAPTIV + ANIMAȚIE FĂRĂ ZOOM
 =========================== */
 .hero {
     background: 
         linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)),
         url("assets/logo.jpg");
-    
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: scroll; /* NU fixed, previne zoom pe mobil */
 
     padding: 150px 40px;
     min-height: 300px;
     text-align: center;
 
     /* animație inițială */
-    animation: heroIntro 1.5s ease forwards; /* forwards = păstrează starea finală */
+    animation: heroIntro 1.5s ease forwards;
 }
 
+/* animație fade + translatare, fără scale */
 @keyframes heroIntro {
     0% {
         opacity: 0;
-        transform: scale(0.98) translateY(-20px);
+        transform: translateY(-20px);
     }
     100% {
         opacity: 1;
-        transform: scale(1) translateY(0); /* starea finală fixă */
+        transform: translateY(0);
     }
 }
 
@@ -296,19 +297,20 @@ header.small-header {
     .hamburger {
         display: flex;
     }
-}
 
-/* TELEFON MIC */
-@media (max-width: 600px) {
-
+    /* Hero mobile */
     .hero {
         padding: 120px 20px;
+        background-attachment: scroll; /* dezactivăm fixed pe mobil */
     }
 
     .hero h2 {
         font-size: 32px;
     }
+}
 
+/* TELEFON MIC */
+@media (max-width: 600px) {
     .btn {
         font-size: 16px;
     }
