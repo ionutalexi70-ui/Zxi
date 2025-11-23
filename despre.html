@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZXI Concept - Amenajări, Renovări și Construcții</title>
+    <title>Despre noi – ZXI Concept</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo-container">
         <img src="assets/logo.jpg" class="logo">
@@ -18,61 +19,58 @@
     <nav>
         <ul class="nav-links">
             <li><a href="index.html">Acasă</a></li>
-            <li><a href="despre.html">Despre noi</a></li>
+            <li><a href="despre.html" class="active">Despre noi</a></li>
             <li><a href="servicii.html">Servicii</a></li>
             <li><a href="portofoliu.html">Portofoliu</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <div class="hamburger">
-            <div></div><div></div><div></div>
-        </div>
+        <div class="hamburger"><div></div><div></div><div></div></div>
     </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h2>Transformăm orice spațiu în ceva extraordinar</h2>
-        <p>Profesioniști în amenajări interioare, renovări complete și construcții moderne.</p>
-        <a href="servicii.html" class="btn">Vezi serviciile noastre</a>
-    </div>
+<!-- HERO SUBTIL -->
+<section class="hero small-hero">
+    <h2>Despre ZXI Concept</h2>
+    <p>Profesionalism, calitate și proiecte făcute cu pasiune.</p>
 </section>
 
-<!-- LOGO CINEMATIC -->
-<section class="logo-showcase scroll-animate">
-    <h2>Identitate și profesionalism</h2>
-    <img src="assets/logo.jpg" class="big-logo">
-    <p>Simbolul calității, atenției și dedicării în fiecare proiect.</p>
+<!-- DESPRE NOI -->
+<section class="about scroll-animate">
+    <h2>Cine suntem?</h2>
+    <p>
+        ZXI Concept este o echipă de profesioniști specializați în amenajări interioare,
+        renovări complete și construcții moderne. Combinăm experiența practică, materialele
+        premium și tehnologia actuală pentru a realiza proiecte durabile, estetice și funcționale.
+    </p>
+
+    <p>
+        Punem accent pe comunicare, transparență și calitate în execuție – iar fiecare proiect este
+        tratat cu atenție maximă la detalii, indiferent de complexitate.
+    </p>
 </section>
 
-<!-- SERVICII -->
-<section class="services">
-    <h2 class="scroll-animate">Serviciile noastre</h2>
-
-    <div class="service-box scroll-animate">
-        <h3>Amenajări interioare</h3>
-        <p>Design, execuție și finisaje premium pentru spații moderne.</p>
+<section class="about-values">
+    <div class="value-box scroll-animate">
+        <h3>Experiență reală</h3>
+        <p>Peste 10 ani în amenajări și construcții.</p>
     </div>
 
-    <div class="service-box scroll-animate">
-        <h3>Renovări complete</h3>
-        <p>Transformăm locuințe și spații comerciale la standarde premium.</p>
+    <div class="value-box scroll-animate">
+        <h3>Calitate garantată</h3>
+        <p>Lucrări durabile, materiale premium, echipă dedicată.</p>
     </div>
 
-    <div class="service-box scroll-animate">
-        <h3>Construcții & dezvoltare</h3>
-        <p>Fundații, structuri, termoizolații și proiecte complete.</p>
+    <div class="value-box scroll-animate">
+        <h3>Profesionalism</h3>
+        <p>Respectăm termenele și bugetul stabilit.</p>
     </div>
 </section>
 
 <footer>
     <p>© 2025 ZXI Concept — Toate drepturile rezervate.</p>
 </footer>
-
-<!-- SCRIPT ANIMAȚII -->
-// (INSEREAZĂ AICI SCRIPT-UL MARE DE MAI SUS)
 
 <script>
 const scrollElements = document.querySelectorAll(".scroll-animate");
@@ -119,6 +117,6 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+
 </body>
 </html>
-

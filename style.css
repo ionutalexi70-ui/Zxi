@@ -22,6 +22,9 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo-container {
@@ -38,10 +41,15 @@ header {
 header h1 {
     color: var(--gold);
     margin: 0;
+    font-size: 22px;
 }
 
-/* NAV */
-nav ul {
+/* NAVIGATION */
+nav {
+    position: relative;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -58,29 +66,51 @@ nav a:hover {
     color: var(--gold);
 }
 
+/* HAMBURGER MENU – MOBIL */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 28px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.hamburger.open div:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.hamburger.open div:nth-child(2) { opacity: 0; }
+.hamburger.open div:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(17,17,17,0.8), rgba(17,17,17,0.8)), url("assets/logo.jpg");
+    background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)),
+    url("assets/logo.jpg");
     background-size: cover;
     background-position: center;
-    padding: 140px 40px;
+    padding: 150px 40px;
     text-align: center;
+    animation: fadeIn 1.5s ease;
 }
 
 .hero h2 {
     color: var(--gold);
-    font-size: 48px;
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
 .hero p {
     font-size: 20px;
     max-width: 600px;
-    margin: 10px auto;
+    margin: 10px auto 20px;
 }
 
+/* BUTON */
 .btn {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 25px;
     background: var(--gold);
     color: black;
@@ -93,6 +123,7 @@ nav a:hover {
 .btn:hover {
     background: var(--blue);
     color: white;
+    transform: scale(1.05);
 }
 
 /* LOGO SHOWCASE */
@@ -116,6 +147,7 @@ nav a:hover {
 .services h2 {
     text-align: center;
     color: var(--gold);
+    font-size: 32px;
 }
 
 .service-box {
@@ -124,6 +156,11 @@ nav a:hover {
     border-left: 4px solid var(--gold);
     margin: 20px 0;
     border-radius: 6px;
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateX(10px);
 }
 
 /* FOOTER */
@@ -133,4 +170,55 @@ footer {
     margin-top: 40px;
     background: #000;
     border-top: 2px solid var(--gold);
+}
+
+/* ANIMAȚIE */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+/* Tablete + Mobil */
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        padding: 20px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Mobil mic */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero {
+        padding: 120px 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
 }
