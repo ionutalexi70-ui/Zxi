@@ -304,6 +304,17 @@ header.small-header {
 
     .nav-links li {
         width: 100%;
+
+
+       /* Hero mobil: elimină zoom */
+@media (max-width: 900px) {
+    .hero {
+        background-attachment: scroll; /* previne zoom */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
     }
 
     .nav-links a {
@@ -340,3 +351,4 @@ header.small-header {
     color: var(--gold);
     margin: 0;
 }
+
