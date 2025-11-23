@@ -100,8 +100,7 @@ nav a:hover {
    HERO
 =========================== */
 .hero {
-    background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)),
-    url("assets/logo.jpg");
+    background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)), url("assets/logo.jpg");
     background-size: cover;
     background-position: center;
     padding: 150px 40px;
@@ -250,149 +249,28 @@ header.small-header {
    RESPONSIVE DESIGN
 =========================== */
 
-/* TABLETE + TELEFOANE */
-@media (max-width: 900px) {
-
-    header {
-        padding: 15px 20px;
-    }
-
-    /* Meniu mobil */
-    .nav-links {
-        display: none !important;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #000;
-        flex-direction: column;
-        align-items: center;
-        width: 220px;
-        padding: 20px 0;
-        gap: 15px;
-        border-left: 2px solid var(--gold);
-        border-bottom: 2px solid var(--gold);
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        display: flex !important;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-}
-
-/* TELEFON MIC */
-@media (max-width: 600px) {
-
-    header {
-        padding: 12px 15px;
-    }
-
-    .hero {
-        padding: 120px 20px;
-    }
-
-    .hero h2 {
-        font-size: 32px;
-    }
-
-    .btn {
-        font-size: 16px;
-    }
-}
-/* ===== MOBIL: Bara de meniu verticală, TOTUL SE REARANJEAZĂ CORECT ===== */
-
-@media (max-width: 900px) {
-
-    /* Header mai compact */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-        gap: 10px;
-    }
-
-    /* Logo și titlu se aliniază pe un rând */
-    .logo-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /* Titlu mai mic */
-    header h1 {
-        font-size: 18px;
-    }
-
-    /* Logo mai mic */
-    .logo {
-        width: 45px;
-    }
-
-    /* Meniu vertical, ascuns implicit */
-    .nav-links {
-        position: static;
-        width: 100%;
-        flex-direction: column;
-        gap: 15px;
-        background: #000;
-        padding: 15px 0;
-        margin-top: 10px;
-        display: none !important;
-        border-top: 1px solid var(--gold);
-    }
-
-    /* Meniu activ (apare sub header) */
-    .nav-links.active {
-        display: flex !important;
-    }
-
-    /* Hamburger vizibil pe mobil */
-    .hamburger {
-        display: flex;
-    }
-}
-
-
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none; /* elimină underline-ul */
-}
-
-.logo-link h1 {
-    color: var(--gold);
-    margin: 0;
-}
-
-
+/* ===== MOBIL + TABLET ===== */
 @media (max-width: 900px) {
 
     header {
         display: flex;
         justify-content: space-between; /* logo stânga, hamburger dreapta */
         align-items: center;
-        padding: 15px 30px;
+        padding: 15px 20px;
         position: relative;
     }
 
-    /* Logo + titlu rămân pe aceeași linie */
+    /* Logo + titlu pe aceeași linie */
     .logo-container {
         display: flex;
         align-items: center;
         gap: 10px;
-        flex-shrink: 0; 
     }
 
     .logo-container h1 {
-        white-space: nowrap;
-        font-size: 22px;
+        font-size: 20px;
         margin: 0;
+        white-space: nowrap;
     }
 
     .logo-link {
@@ -405,27 +283,27 @@ header.small-header {
     /* Hamburger vizibil în dreapta */
     .hamburger {
         display: flex;
+        flex-shrink: 0;
+        cursor: pointer;
+        z-index: 1000;
     }
 
     /* Meniu vertical ascuns inițial */
     .nav-links {
-        position: absolute;
-        top: 70px; /* sub header */
-        right: 0; /* aliniat în dreapta */
-        background: #000;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 180px;
-        padding: 15px 20px;
         display: none;
-        border: 1px solid var(--gold);
-        border-radius: 5px;
-        z-index: 999;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Meniu activ (apare la click) */
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links li {
         width: 100%;
-        margin: 5px 0;
     }
 
     .nav-links a {
@@ -434,7 +312,31 @@ header.small-header {
         padding: 8px 0;
     }
 
-    .nav-links.active {
-        display: flex;
+    /* Hero și text responsive */
+    .hero {
+        padding: 120px 20px;
     }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
+/* ===========================
+   LOGO LINK
+=========================== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo-link h1 {
+    color: var(--gold);
+    margin: 0;
 }
