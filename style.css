@@ -1,0 +1,136 @@
+/* CULORI BRAND */
+:root {
+    --gold: #c7a441;
+    --blue: #244760;
+    --dark: #111214;
+    --white: #ffffff;
+}
+
+/* GENERAL */
+body {
+    margin: 0;
+    background: var(--dark);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #000;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: var(--gold);
+    margin: 0;
+}
+
+/* NAV */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(17,17,17,0.8), rgba(17,17,17,0.8)), url("assets/logo.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 140px 40px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: var(--gold);
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--gold);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--blue);
+    color: white;
+}
+
+/* LOGO SHOWCASE */
+.logo-showcase {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.big-logo {
+    width: 200px;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 3px solid var(--gold);
+}
+
+/* SERVICII */
+.services {
+    padding: 40px;
+}
+
+.services h2 {
+    text-align: center;
+    color: var(--gold);
+}
+
+.service-box {
+    background: #1a1b1d;
+    padding: 20px;
+    border-left: 4px solid var(--gold);
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #000;
+    border-top: 2px solid var(--gold);
+}
