@@ -1,4 +1,6 @@
-/* CULORI BRAND */
+/* ===========================
+   CULORI BRAND
+=========================== */
 :root {
     --gold: #c7a441;
     --blue: #244760;
@@ -6,7 +8,9 @@
     --white: #ffffff;
 }
 
-/* GENERAL */
+/* ===========================
+   GENERAL
+=========================== */
 body {
     margin: 0;
     background: var(--dark);
@@ -14,7 +18,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER
+=========================== */
 header {
     background: #000;
     padding: 20px 40px;
@@ -25,6 +31,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
+    transition: 0.3s;
 }
 
 .logo-container {
@@ -44,7 +51,9 @@ header h1 {
     font-size: 22px;
 }
 
-/* NAVIGATION */
+/* ===========================
+   NAVIGATION
+=========================== */
 nav {
     position: relative;
 }
@@ -66,7 +75,9 @@ nav a:hover {
     color: var(--gold);
 }
 
-/* HAMBURGER MENU – MOBIL */
+/* ===========================
+   HAMBURGER MENU
+=========================== */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -85,7 +96,9 @@ nav a:hover {
 .hamburger.open div:nth-child(2) { opacity: 0; }
 .hamburger.open div:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
 
-/* HERO */
+/* ===========================
+   HERO
+=========================== */
 .hero {
     background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)),
     url("assets/logo.jpg");
@@ -94,21 +107,26 @@ nav a:hover {
     padding: 150px 40px;
     text-align: center;
     animation: fadeIn 1.5s ease;
+    background-attachment: fixed;
 }
 
 .hero h2 {
     color: var(--gold);
     font-size: 42px;
     margin-bottom: 15px;
+    animation: fadeDown 1.2s ease;
 }
 
 .hero p {
     font-size: 20px;
     max-width: 600px;
     margin: 10px auto 20px;
+    animation: fadeUp 1.3s ease;
 }
 
-/* BUTON */
+/* ===========================
+   BUTON
+=========================== */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -118,6 +136,7 @@ nav a:hover {
     font-weight: bold;
     border-radius: 5px;
     transition: 0.3s;
+    animation: subtlePulse 2.5s infinite;
 }
 
 .btn:hover {
@@ -126,7 +145,9 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* LOGO SHOWCASE */
+/* ===========================
+   LOGO SHOWCASE
+=========================== */
 .logo-showcase {
     text-align: center;
     padding: 60px 20px;
@@ -137,9 +158,16 @@ nav a:hover {
     margin: 20px 0;
     border-radius: 12px;
     border: 3px solid var(--gold);
+    transition: transform 1s ease;
 }
 
-/* SERVICII */
+.big-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ===========================
+   SERVICII
+=========================== */
 .services {
     padding: 40px;
 }
@@ -156,14 +184,17 @@ nav a:hover {
     border-left: 4px solid var(--gold);
     margin: 20px 0;
     border-radius: 6px;
-    transition: 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .service-box:hover {
-    transform: translateX(10px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     text-align: center;
     padding: 20px;
@@ -172,30 +203,79 @@ footer {
     border-top: 2px solid var(--gold);
 }
 
-/* ANIMAȚIE */
+/* ===========================
+   ANIMAȚII
+=========================== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVE */
-/* Tablete + Mobil */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* Scroll animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s ease-out;
+}
+
+.scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header mic la scroll */
+header.small-header {
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+/* TABLETE + TELEFOANE */
 @media (max-width: 900px) {
 
+    header {
+        padding: 15px 20px;
+    }
+
+    /* Meniu mobil */
     .nav-links {
+        display: none !important;
         position: absolute;
-        top: 60px;
+        top: 70px;
         right: 0;
         background: #000;
         flex-direction: column;
         align-items: center;
-        width: 200px;
+        width: 220px;
         padding: 20px 0;
-        display: none;
+        gap: 15px;
+        border-left: 2px solid var(--gold);
+        border-bottom: 2px solid var(--gold);
+        z-index: 1000;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .hamburger {
@@ -203,19 +283,19 @@ footer {
     }
 }
 
-/* Mobil mic */
+/* TELEFON MIC */
 @media (max-width: 600px) {
 
     header {
-        padding: 15px 20px;
-    }
-
-    .hero h2 {
-        font-size: 32px;
+        padding: 12px 15px;
     }
 
     .hero {
         padding: 120px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
     }
 
     .btn {
