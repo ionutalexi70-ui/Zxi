@@ -323,20 +323,6 @@ header.small-header {
         padding: 8px 0;
     }
 
-    /* Hero și text responsive */
-    .hero {
-        padding: 120px 20px;
-    }
-
-    .hero h2 {
-        font-size: 32px;
-    }
-
-    .btn {
-        font-size: 16px;
-    }
-}
-
 /* ===========================
    LOGO LINK
 =========================== */
@@ -352,3 +338,35 @@ header.small-header {
     margin: 0;
 }
 
+
+
+
+
+@media (max-width: 900px) {
+    .hero {
+        background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)),
+                    url("assets/logo.jpg") no-repeat center center;
+        background-size: 100% 100%; /* dimensiune fixă */
+        background-attachment: scroll; /* previne zoom */
+        animation: none !important; /* oprește animația care poate scala */
+        padding: 120px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+   
