@@ -370,3 +370,26 @@ header.small-header {
     margin: 0;
 }
 
+
+
+/* Logo + titlu pe aceeasi linie, fix pe mobil */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spațiu între logo și titlu */
+    flex-shrink: 0; /* împiedică micșorarea sau mutarea elementelor */
+}
+
+.logo-container h1 {
+    white-space: nowrap; /* nu permite titlului să se rupă pe linii multiple */
+    font-size: 22px;
+    margin: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
